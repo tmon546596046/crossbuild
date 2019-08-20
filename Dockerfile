@@ -11,6 +11,7 @@ RUN set -x; \
  && dpkg --add-architecture i386                       \
  && dpkg --add-architecture mips                       \
  && dpkg --add-architecture mipsel                     \
+ && dpkg --add-architecture mips64el                   \
  && dpkg --add-architecture powerpc                    \
  && dpkg --add-architecture ppc64el                    \
  && apt-get update                                     \
@@ -28,6 +29,7 @@ RUN set -x; \
         crossbuild-essential-armel                     \
         crossbuild-essential-armhf                     \
         crossbuild-essential-mipsel                    \
+        crossbuild-essential-mips64el                  \
         crossbuild-essential-ppc64el                   \
         curl                                           \
         devscripts                                     \
@@ -91,7 +93,7 @@ RUN mkdir -p "/tmp/osxcross"                                                    
 
 
 # Create symlinks for triples and set default CROSS_TRIPLE
-ENV LINUX_TRIPLES=arm-linux-gnueabi,arm-linux-gnueabihf,aarch64-linux-gnu,mipsel-linux-gnu,powerpc64le-linux-gnu                  \
+ENV LINUX_TRIPLES=arm-linux-gnueabi,arm-linux-gnueabihf,aarch64-linux-gnu,mipsel-linux-gnu,mips64el-linux-gnu,powerpc64le-linux-gnu                  \
     DARWIN_TRIPLES=x86_64h-apple-darwin${DARWIN_VERSION},x86_64-apple-darwin${DARWIN_VERSION},i386-apple-darwin${DARWIN_VERSION}  \
     WINDOWS_TRIPLES=i686-w64-mingw32,x86_64-w64-mingw32                                                                           \
     CROSS_TRIPLE=x86_64-linux-gnu

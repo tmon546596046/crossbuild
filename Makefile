@@ -1,8 +1,8 @@
 IMAGE = multiarch/crossbuild:dev
-LINUX_TRIPLES = arm-linux-gnueabihf arm-linux-gnueabi powerpc64le-linux-gnu aarch64-linux-gnu arm-linux-gnueabihf mipsel-linux-gnu
+LINUX_TRIPLES = arm-linux-gnueabihf arm-linux-gnueabi powerpc64le-linux-gnu aarch64-linux-gnu arm-linux-gnueabihf mipsel-linux-gnu mips64el-linux-gnu
 DARWIN_TRIPLES = x86_64-apple-darwin i386-apple-darwin x86_64h-apple-darwin
 WINDOWS_TRIPLES = x86_64-w64-mingw32 i686-w64-mingw32
-ALIAS_TRIPLES = arm armhf arm64 amd64 x86_64 mips mipsel powerpc powerpc64 powerpc64le osx darwin windows
+ALIAS_TRIPLES = arm armhf arm64 amd64 x86_64 mips mipsel mips64el powerpc powerpc64 powerpc64le osx darwin windows
 DOCKER_TEST_ARGS ?= -it --rm -v $(shell pwd)/test:/test -w /test
 
 
